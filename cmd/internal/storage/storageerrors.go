@@ -3,10 +3,10 @@ package storage
 import (
 	"errors"
 
-	errtext "github.com/RenzoFudo/http_salem_repo/internal/domain/errors"
+	errtext "github.com/RenzoFudo/GoCityMarket/cmd/internal/domain/errors"
 )
 
-var ErrInvalidAuthData = errors.New(errtext.InvalidAuthDataError)
+var ErrInvalidLoginData = errors.New(errtext.InvalidLoginDataError)
 var ErrUserNotFound = errors.New(errtext.UserNotFoundError)
-var ErrBookNotFound = errors.New(errtext.BookNotFoundError)
-var ErrBooksListEmpty = errors.New(errtext.BooksListEmptyError)
+var ErrProductNotFound = errors.New(errtext.ProductNotFoundError)
+var ErrProductsListEmpty = errors.New(errtext.ProductsListEmptyError)

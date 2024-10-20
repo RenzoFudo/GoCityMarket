@@ -1,8 +1,8 @@
 package errors
 
 const (
-	InvalidAuthDataError = "invalid password"
-	UserNotFoundError    = "user not found"
-	BookNotFoundError    = "book not found"
-	BooksListEmptyError  = "book database is empty"
+	InvalidLoginDataError  = "invalid password"
+	UserNotFoundError      = "user not found"
+	ProductNotFoundError   = "Product not found"
+	ProductsListEmptyError = "Product database is empty"
 )
