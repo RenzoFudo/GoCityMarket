@@ -20,8 +20,8 @@ func New() *MemStorage {
 	}
 }
 func (ms *MemStorage) RegisterUser(user models.User) error {
-	uid := uuid.New().String()
-	ms.usersMap[uid] = user
+	//uid := uuid.New().String()
+	ms.usersMap[user.UID] = user
 	return nil
 }
 func (ms *MemStorage) LoginUser(user models.User) (string, error) {
@@ -63,11 +63,38 @@ func (ms *MemStorage) AddProduct(product models.Product) error {
 	ms.productsMap[pId] = product
 	return nil
 }
-func (ms *MemStorage) Deleteproduct(pId string) error {
+func (ms *MemStorage) DeleteProduct(pId string) error {
 	_, ok := ms.productsMap[pId]
 	if !ok {
 		return ErrProductNotFound
 	}
 	delete(ms.productsMap, pId)
+	return nil
+}
+
+func (ms *MemStorage) UpdateProduct(pId string) (models.Product, error) {
+	log.Printf("PID: %s\n", pId)
+	for _, val := range ms.productsMap {
+		log.Println(val.Description, val.PID)
+	}
+	product, ok := ms.productsMap[pId]
+	if !ok {
+		return models.Product{}, ErrProductNotFound
+	}
+	return product, nil
+}
+func (ms *MemStorage) GetUserProfile(uId models.User) (string, error) {
+	return "", nil
+}
+func (ms *MemStorage) GetAllProducts() ([]models.Product, error) {
+	return nil, nil
+}
+func (ms *MemStorage) MakePurchase(models.Purchase) error {
+	return nil
+}
+func (ms *MemStorage) GetUserPurchases(models.Purchase) error {
+	return nil
+}
+func (ms *MemStorage) GetProductPurchases(models.Purchase) error {
 	return nil
 }

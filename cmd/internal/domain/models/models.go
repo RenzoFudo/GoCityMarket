@@ -1,7 +1,9 @@
 package models
 
 type User struct {
-	UID   string `json:"uid"`                              // юзер id
+	UID string `json:"
+
+"` // юзер id
 	Name  string `json:"name" validate:"required"`         // юзер нейм
 	Email string `json:"email" validate:"required, email"` // электронная почта
 	Pass  string `json:"pass" validate:"required"`         // юзер пароль

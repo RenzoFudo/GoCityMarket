@@ -7,7 +7,7 @@ type Config struct {
 	Debug bool
 }
 
-func readConfig() Config {
+func ReadConfig() Config {
 	var host string
 	flag.StringVar(&host, "host", "8080", "server host")
 	debug := flag.Bool("debug", false, "enable debug logging level")
